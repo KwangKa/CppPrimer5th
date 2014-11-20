@@ -2,6 +2,16 @@
 #define SALES_DATA_H
 
 struct Sales_data {
+    Sales_data() = default;
+    Sales_data(const std::string &s) : bookNo(s) {}
+    Sales_data(const std::string &s, unsigned n, double p):
+        bookNo(s), units_sold(n), revenue(p*n) {}
+    Sales_data(std::istream &is) {
+        double price;
+        is >> bookNo >> units_sold >> price;
+        revenue = price * units_sold;
+    }
+
     std::string isbn() const { return bookNo; }
     Sales_data& combine(const Sales_data&);
     double avg_price() const;

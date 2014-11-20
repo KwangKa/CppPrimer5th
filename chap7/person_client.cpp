@@ -9,5 +9,6 @@ int main()
         print(std::cout, p);
         std::cout << std::endl;
     }
+
     return 0;
 }

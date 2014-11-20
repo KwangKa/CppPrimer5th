@@ -2,6 +2,11 @@
 #define PERSON_H
 
 struct Person {
+    Person() = default;
+    Person(const std::string &sname, const std::string &sadd) : name(sname), address(sadd) {}
+    Person(std::istream &is) {
+        is >> name >> address;
+    }
     std::string getName() const {
         return name;
     }
