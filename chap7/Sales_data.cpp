@@ -8,10 +8,6 @@ Sales_data& Sales_data::combine(const Sales_data& rhs) {
     return *this;
 }
 
-double Sales_data::avg_price() const {
-    return units_sold ? revenue / units_sold : 0.0;
-}
-
 Sales_data add(const Sales_data &lhs, const Sales_data &rhs) {
     Sales_data sum = lhs;
     sum.combine(rhs);
