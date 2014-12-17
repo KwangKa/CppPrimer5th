@@ -1,6 +1,5 @@
 #ifndef SALES_DATA_H
 #define SALES_DATA_H
-
 class Sales_data {
     friend Sales_data add(const Sales_data&, const Sales_data&);
     friend std::ostream &print(std::ostream&, const Sales_data&);
