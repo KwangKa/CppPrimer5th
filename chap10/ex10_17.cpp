@@ -4,8 +4,6 @@
 #include <algorithm>
 #include "Sales_data.h"
 
-bool isSmaller(const Sales_data&, const Sales_data&);
-
 int main() {
     std::vector<Sales_data> vtrans;
     Sales_data trans;
@@ -17,7 +15,9 @@ int main() {
         std::cout << std::endl;
     }
 
-    sort(vtrans.begin(), vtrans.end(), isSmaller);
+    sort(vtrans.begin(), vtrans.end(),
+         [](const Sales_data &trans1, const Sales_data &trans2)
+         { return trans1.isbn() < trans2.isbn();});
     
     std::cout << std::endl;
     std::cout << "Sorted by isbn:" << std::endl;
@@ -26,8 +26,4 @@ int main() {
         std::cout << std::endl;
     }
     return 0;
-}
-
-bool isSmaller(const Sales_data &trans1, const Sales_data &trans2) {
-    return trans1.isbn() < trans2.isbn();
 }
