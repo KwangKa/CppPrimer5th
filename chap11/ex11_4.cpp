@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <iostream>
 #include <map>
-#include <string>
+#include <functional>
 
 using namespace std;
 
