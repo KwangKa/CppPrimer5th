@@ -23,8 +23,8 @@ public:
 
     string& front();
     string& back();
-    string& front() const;
-    string& back() const;
+    const string& front() const;
+    const string& back() const;
 
 private:
     std::shared_ptr<vector<string>> data;
@@ -50,7 +50,7 @@ string& StrBlob::front() {
     return data -> front();
 }
 
-string& StrBlob::front() const {
+const string& StrBlob::front() const {
     check(0, "front on empty StrBlob");
     std::cout << "const front" << std::endl;    
     return data -> front();
@@ -61,7 +61,7 @@ string& StrBlob::back() {
     return data -> back();
 }
 
-string& StrBlob::back() const {
+const string& StrBlob::back() const {
     check(0, "back on empty StrBlob");
     std::cout << "const back" << std::endl;
     return data -> back();
